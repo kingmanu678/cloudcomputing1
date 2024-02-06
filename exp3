@@ -1,0 +1,33 @@
+class Solution {
+public:
+    bool cheak(char c)
+    {
+        if((c>='a' && c<='z') ||(c>='A' && c<='Z'))
+        {
+        return true; 
+        }
+        else {return false;
+        } 
+    }
+    string reverseOnlyLetters(string s) {
+                int j=s.length()-1;
+                int i=0;
+                while(i<=j){
+                    if(cheak(s[i]) && cheak(s[j])){
+                    swap(s[i],s[j]);
+                    i++;
+                    j--;
+                    }
+                    else if(!cheak(s[i]))
+                    {
+                        i++;
+                    }
+                    else 
+                    {
+                        j--;
+                    }
+                }
+            return s;
+        
+    }
+};
